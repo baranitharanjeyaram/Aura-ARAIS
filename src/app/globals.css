@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F4F1EC;
+  --foreground: #102A43;
+  
+  --primary-navy: #0A2540;
+  --primary-midnight: #102A43;
+  --primary-gold: #C9A227;
+  
+  --steel-blue: #486581;
+  --light-blue: #9FB3C8;
+  --slate-gray: #52606D;
+  
+  --risk-low: #2E7D32;
+  --risk-moderate: #F9A825;
+  --risk-high: #EF6C00;
+  --risk-critical: #C62828;
+  
+  --card: #FFFFFF;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-navy: var(--primary-navy);
+  --color-midnight: var(--primary-midnight);
+  --color-gold: var(--primary-gold);
+  
+  --color-steel: var(--steel-blue);
+  --color-lightblue: var(--light-blue);
+  --color-slate: var(--slate-gray);
+  
+  --color-risk-low: var(--risk-low);
+  --color-risk-mod: var(--risk-moderate);
+  --color-risk-high: var(--risk-high);
+  --color-risk-crit: var(--risk-critical);
+  
+  --color-card: var(--card);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom premium scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--steel-blue);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-gold);
+}
+
+/* Custom glassmorphism and subtle animations */
+.premium-card {
+  background: white;
+  border: 1px solid rgba(72, 101, 129, 0.15);
+  border-top: 2px solid var(--steel-blue);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  border-top-color: var(--primary-gold);
+}
+
+.gold-accent {
+  border-color: var(--primary-gold);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
